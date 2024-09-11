@@ -1,0 +1,33 @@
+Information: 0 - 24/01/2024 23:38:27 | Executando o método SignInRequest
+Information: ListeningOnAddress - Now listening on: https://localhost:7176
+Information: ListeningOnAddress - Now listening on: http://localhost:5055
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\git\PortalInvestimento\src\API
+Information: 0 - 24/01/2024 23:42:17 | Executando o método SignInRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (92ms) [Parameters=[@__requestEmail_0='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[COD_CLIENTE], [c].[NOM_EMAIL], [c].[NOM_CLIENTE], [c].[NOM_SENHA]
+FROM [CLIENTE] AS [c]
+WHERE [c].[NOM_EMAIL] = @__requestEmail_0
+Information: 0 - 24/01/2024 23:42:34 | Executando o método SignInRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (3ms) [Parameters=[@__requestEmail_0='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[COD_CLIENTE], [c].[NOM_EMAIL], [c].[NOM_CLIENTE], [c].[NOM_SENHA]
+FROM [CLIENTE] AS [c]
+WHERE [c].[NOM_EMAIL] = @__requestEmail_0
+Information: ListeningOnAddress - Now listening on: https://localhost:7176
+Information: ListeningOnAddress - Now listening on: http://localhost:5055
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\git\PortalInvestimento\src\API
+Information: 0 - 24/01/2024 23:43:25 | Executando o método SignInRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (47ms) [Parameters=[@__requestEmail_0='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[COD_CLIENTE], [c].[NOM_EMAIL], [c].[NOM_CLIENTE], [c].[NOM_SENHA]
+FROM [CLIENTE] AS [c]
+WHERE [c].[NOM_EMAIL] = @__requestEmail_0
+Error: 0 - 24/01/2024 23:43:26 | 401: Invalid credentials
+Information: ListeningOnAddress - Now listening on: https://localhost:7176
+Information: ListeningOnAddress - Now listening on: http://localhost:5055
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\git\PortalInvestimento\src\API
+Information: 0 - 24/01/2024 23:59:47 | Executando o método PostAssetsRequest

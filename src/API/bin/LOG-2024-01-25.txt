@@ -1,0 +1,48 @@
+Information: 0 - 25/01/2024 00:00:28 | Executando o método PostAssetsRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (54ms) [Parameters=[@__symbol_0='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[COD_ATIVO], [a].[VAL_QUANTIDADE_DISPONIVEL], [a].[VAL_MERCADO], [a].[NOM_ATIVO], [a].[VAL_PRECO], [a].[NOM_SIMBOLO]
+FROM [ATIVO] AS [a]
+WHERE [a].[NOM_SIMBOLO] = @__symbol_0
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (Size = 100), @p3='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p4='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ATIVO] ([VAL_QUANTIDADE_DISPONIVEL], [VAL_MERCADO], [NOM_ATIVO], [VAL_PRECO], [NOM_SIMBOLO])
+OUTPUT INSERTED.[COD_ATIVO]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+Information: 0 - 25/01/2024 00:00:30 | Assets Criado com Sucesso
+Information: 0 - 25/01/2024 00:03:47 | Executando o método PostAssetsRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (4ms) [Parameters=[@__symbol_0='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[COD_ATIVO], [a].[VAL_QUANTIDADE_DISPONIVEL], [a].[VAL_MERCADO], [a].[NOM_ATIVO], [a].[VAL_PRECO], [a].[NOM_SIMBOLO]
+FROM [ATIVO] AS [a]
+WHERE [a].[NOM_SIMBOLO] = @__symbol_0
+Error: 0 - 25/01/2024 00:03:47 | 400: Existing asset symbol
+Information: ListeningOnAddress - Now listening on: https://localhost:7176
+Information: ListeningOnAddress - Now listening on: http://localhost:5055
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\git\PortalInvestimento\src\API
+Information: 0 - 25/01/2024 00:32:21 | Executando o método SignInRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (59ms) [Parameters=[@__requestEmail_0='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[COD_CLIENTE], [c].[NOM_EMAIL], [c].[NOM_CLIENTE], [c].[NOM_SENHA]
+FROM [CLIENTE] AS [c]
+WHERE [c].[NOM_EMAIL] = @__requestEmail_0
+Error: 0 - 25/01/2024 00:32:23 | 401: Invalid credentials
+Information: 0 - 25/01/2024 00:32:30 | Executando o método SignInRequest
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (3ms) [Parameters=[@__requestEmail_0='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[COD_CLIENTE], [c].[NOM_EMAIL], [c].[NOM_CLIENTE], [c].[NOM_SENHA]
+FROM [CLIENTE] AS [c]
+WHERE [c].[NOM_EMAIL] = @__requestEmail_0
+Information: 0 - 25/01/2024 00:32:31 | Token Obtido com Sucesso
+Information: 0 - 25/01/2024 00:32:49 | Executando o método WithdrawRequest
+Information: 0 - 25/01/2024 00:33:13 | Executando o método WithdrawRequest
+Information: 0 - 25/01/2024 00:33:55 | Executando o método WithdrawRequest
+Information: ListeningOnAddress - Now listening on: https://localhost:7176
+Information: ListeningOnAddress - Now listening on: http://localhost:5055
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\git\PortalInvestimento\src\API
+Information: ListeningOnAddress - Now listening on: https://localhost:7176
+Information: ListeningOnAddress - Now listening on: http://localhost:5055
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\git\PortalInvestimento\src\API
