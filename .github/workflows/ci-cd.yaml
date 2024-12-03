@@ -35,6 +35,12 @@ jobs:
     - name: Run unit tests with coverage
       run: dotnet test tests/UnitTests/UnitTests.csproj --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
+    # Gera o relatório de cobertura
+    - name: Generate coverage report
+      run: |
+        dotnet tool install --global dotnet-reportgenerator-globaltool
+        reportgenerator "-reports:**/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:Html
+
     # Publica os resultados dos testes
     - name: Publish Test Results
       if: always()
@@ -44,9 +50,9 @@ jobs:
         path: '**/*.trx'
 
     # Publica o relatório de cobertura de código
-    - name: Upload Code Coverage
+    - name: Upload Code Coverage Report
       if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: code-coverage
-        path: '**/coverage.cobertura.xml'
+        name: code-coverage-report
+        path: 'coverage-report/**'
