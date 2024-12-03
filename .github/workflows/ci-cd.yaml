@@ -34,7 +34,7 @@ jobs:
 
     # Executa os testes unitários
     - name: Run unit tests
-      run: dotnet test tests/UnitTests/UnitTests.csproj --no-build --configuration Release --verbosity normal
+      run: dotnet test tests/UnitTests/UnitTests.csproj --no-build --configuration Release --verbosity normal --logger trx
 
     # Opcional: se você quiser gerar e publicar artefatos de build ou resultados de testes
     - name: Publish Test Results
@@ -42,4 +42,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: test-results
-        path: '**/TestResults/*.trx'
+        path: '**/*.trx'
