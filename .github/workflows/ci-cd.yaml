@@ -1,6 +1,5 @@
 ﻿name: CI/CD Pipeline
 
-# Dispara a pipeline para pushes e pull requests na branch 'main'
 on:
   push:
     branches:
@@ -32,14 +31,22 @@ jobs:
     - name: Build the solution
       run: dotnet build --no-restore --configuration Release
 
-    # Executa os testes unitários
-    - name: Run unit tests
-      run: dotnet test tests/UnitTests/UnitTests.csproj --no-build --configuration Release --verbosity normal --logger trx
+    # Executa os testes unitários com coleta de cobertura
+    - name: Run unit tests with coverage
+      run: dotnet test tests/UnitTests/UnitTests.csproj --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
-    # Opcional: se você quiser gerar e publicar artefatos de build ou resultados de testes
+    # Publica os resultados dos testes
     - name: Publish Test Results
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: test-results
         path: '**/*.trx'
+
+    # Publica o relatório de cobertura de código
+    - name: Upload Code Coverage
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage
+        path: '**/coverage.cobertura.xml'
