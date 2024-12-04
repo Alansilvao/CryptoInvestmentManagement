@@ -16,8 +16,7 @@ public class DepositUseCaseTest
 	private readonly IDepositUseCase _useCase;
 	private readonly TokenInfo _tokenInfo;
 
-	public DepositUseCaseTest
-		()
+	public DepositUseCaseTest()
 	{
 		_accountRepositoryMock = new Mock<IAccountsRepository>();
 		_jwtProviderMock = new Mock<IJwtProvider>();

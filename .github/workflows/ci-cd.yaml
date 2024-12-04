@@ -13,35 +13,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Faz o checkout do código
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Configura o .NET Core
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.x'  # Altere conforme a versão do .NET que você está usando
+        dotnet-version: '7.x'  
 
-    # Restaura as dependências do projeto
     - name: Restore dependencies
       run: dotnet restore
 
-    # Compila o projeto
     - name: Build the solution
       run: dotnet build --no-restore --configuration Release
 
-    # Executa os testes unitários com coleta de cobertura
     - name: Run unit tests with coverage
       run: dotnet test tests/UnitTests/UnitTests.csproj --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
 
-    # Gera o relatório de cobertura
     - name: Generate coverage report
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool
         reportgenerator "-reports:**/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:Html
 
-    # Publica os resultados dos testes
     - name: Publish Test Results
       if: always()
       uses: actions/upload-artifact@v3
@@ -49,7 +42,6 @@ jobs:
         name: test-results
         path: '**/*.trx'
 
-    # Publica o relatório de cobertura de código
     - name: Upload Code Coverage Report
       if: always()
       uses: actions/upload-artifact@v3

@@ -1,16 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{C7269249-57B2-4423-9352-34BA3D59AED1}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{C7269249-57B2-4423-9352-34BA3D59AED1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{45D8632B-F8CA-4E3B-AB8C-AC921C9C7138}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{45D8632B-F8CA-4E3B-AB8C-AC921C9C7138}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "src\Infra\Infra.csproj", "{4A341102-B95C-42A5-969C-5FB9A3223A0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "src\Infra\Infra.csproj", "{4A341102-B95C-42A5-969C-5FB9A3223A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{681D8B47-3FB3-46C6-93E9-6D40589403DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{681D8B47-3FB3-46C6-93E9-6D40589403DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B10C5699-F151-416F-A52E-4BA203465982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{E573E4F1-173E-470C-9194-677BCDBFAF05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{E573E4F1-173E-470C-9194-677BCDBFAF05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{B888EE07-6A58-4852-8603-09DCC41BC310}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci-cd.yaml = .github\workflows\ci-cd.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,7 +47,13 @@ Global
 		{E573E4F1-173E-470C-9194-677BCDBFAF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E573E4F1-173E-470C-9194-677BCDBFAF05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E573E4F1-173E-470C-9194-677BCDBFAF05} = {B10C5699-F151-416F-A52E-4BA203465982}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A6789D9-9011-42E3-B666-D0D16B187E6C}
 	EndGlobalSection
 EndGlobal
